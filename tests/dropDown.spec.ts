@@ -17,4 +17,7 @@ test("Verify DropDown", async({page})=>{
     const countryCount2:Locator= page.locator("#country>option");
     await expect(countryCount2).toHaveCount(10);
 
+
+    const optionsString:string[]=(await countryCount2.allTextContents()).map(text=>text.trim());
+
 });
